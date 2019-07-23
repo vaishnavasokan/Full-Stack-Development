@@ -1,8 +1,14 @@
+.mydiv
+{
+    border: 3px solid black;
+    margin-top: 100px
+}
+
 .test
 {
         color: dimgrey
 }
     body
     {
-        background: url('../picture.jpg')
+        background: url('../gf.jpg')
     }
