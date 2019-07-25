@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+    function getNum()
+    {
+        var n1 =parseInt(document.getElementById("num1").value);
+        var n2 =parseInt(document.getElementById("num2").value);
+        if(n1>n2)
+            alert(n1 +" is the largest number");
+        else
+            alert(n2 +" is the largest number");
+        
+    }
+    </script>
+    
+</head>
+<body>
+    <form>
+        <table class="table" style="border: 2px solid black">
+                <tr>
+                    <td>Enter the first number: </td>
+                    <td><input type="text" name="" id="num1"></td>
+                </tr>
+                <tr>
+                    <td>Enter the second number: </td>
+                    <td><input type="text" name="" id="num2"></td>
+                </tr>
+                <tr>
+                        <td></td>
+                        <td><Button type="button" class="btn btn-success" onclick="getNum()">Largest</Button></td>
+                        <td><p id="result"></p></td>
+                </tr>
+                        
+        </table>
+    </form>
+    
+</body>
+</html>
