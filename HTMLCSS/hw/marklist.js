@@ -59,7 +59,11 @@ function getDetails()
 
     for(var i=1;i<=6;i++)
     {
-        document.getElementById("mr"+i).innerHTML=subject[i].toString();   
+        document.getElementById("sb"+i).innerHTML=subject[i].toString(); 
+        document.getElementById("mr"+i).innerHTML=m[i].toString();   
+        document.getElementById("tt"+i).innerHTML=t[i].toString();
+        document.getElementById("gd"+i).innerHTML=grade[i].toString();
     }
 
+    
 }
