@@ -3,13 +3,19 @@ function getDetails()
     var sname=document.getElementById("stname").value;
     var sem= document.getElementById("semname").value;
     var ecode=document.getElementById("excode").value;
-    
-    var s1=document.getElementById("sub1").value;
-    var s2=document.getElementById("sub2").value;
-    var s3=document.getElementById("sub3").value;
-    var s4=document.getElementById("sub4").value;
-    var s5=document.getElementById("sub5").value;
-    var s6=document.getElementById("sub6").value;
+
+    var subject = Array();
+    for(var i=1; i<=6; i++)
+    {
+        subject[i]=document.getElementById("sub"+i).value;
+    }
+
+    //var s1=document.getElementById("sub1").value;
+    //var s2=document.getElementById("sub2").value;
+    //var s3=document.getElementById("sub3").value;
+    //var s4=document.getElementById("sub4").value;
+    //var s5=document.getElementById("sub5").value;
+    //var s6=document.getElementById("sub6").value;
 
     var m = Array();
     var t = Array();
@@ -20,6 +26,7 @@ function getDetails()
         t[i]=document.getElementById("tot"+i).value;
         per[i]=(m[i]/t[i])*100;
     }
+    //console.log(m);
     
     var grade=Array();
     for(var i=1;i<=6;i++)
@@ -45,27 +52,6 @@ function getDetails()
         else if((parseInt(per[i])>=95) && (parseInt(per[i])<=100))
             grade[i]="S";        
     }
-    //console.log(m);
-    // m[1]=document.getElementById("mk3").value;
-    // m[2]=document.getElementById("mk4").value;
-    // m[3]=document.getElementById("mk5").value;
-    // m[4]=document.getElementById("mk3").value;
-    // m[5]=document.getElementById("mk4").value;
-    // m[6]=document.getElementById("mk5").value;
-
-    // var m1=document.getElementById("mk1").value;
-    // var m2=document.getElementById("mk2").value;
-    // var m3=document.getElementById("mk3").value;
-    // var m4=document.getElementById("mk4").value;
-    // var m5=document.getElementById("mk5").value;
-    // var m6=document.getElementById("mk6").value;
-
-    var s1=document.getElementById("sub1").value;
-    var s2=document.getElementById("sub2").value;
-    var s3=document.getElementById("sub3").value;
-    var s4=document.getElementById("sub4").value;
-    var s5=document.getElementById("sub5").value;
-    var s6=document.getElementById("sub6").value;
 
     document.getElementById("studname").innerHTML=sname;
     document.getElementById("semester").innerHTML=sem;
@@ -73,7 +59,7 @@ function getDetails()
 
     for(var i=1;i<=6;i++)
     {
-        document.getElementById("mr"+i).innerHTML=per[i].toString();   
+        document.getElementById("mr"+i).innerHTML=subject[i].toString();   
     }
 
 }
