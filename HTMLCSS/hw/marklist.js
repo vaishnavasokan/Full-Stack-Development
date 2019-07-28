@@ -8,6 +8,15 @@ function getDetails()
     var sem= document.getElementById("semname").value;
     var ecode=document.getElementById("excode").value;
 
+    if (sname==null || sname=="" ||  ecode==null || ecode=="")
+    {  
+        alert("Please enter required fields");
+        document.getElementById("alert1").style.display="auto";
+        return;
+    }
+    
+
+
     var subject = Array();
     for(var i=1; i<=6; i++)
     {
