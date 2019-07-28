@@ -1,5 +1,9 @@
 function getDetails()
 { 
+    var res = document.getElementById("result");
+    if(res.style.display=="none")
+        res.style.display="block";  
+        
     var sname=document.getElementById("stname").value;
     var sem= document.getElementById("semname").value;
     var ecode=document.getElementById("excode").value;
@@ -8,6 +12,7 @@ function getDetails()
     for(var i=1; i<=6; i++)
     {
         subject[i]=document.getElementById("sub"+i).value;
+        document.getElementById("sb"+i).innerHTML=subject[i];
     }
 
     //var s1=document.getElementById("sub1").value;
@@ -23,7 +28,9 @@ function getDetails()
     for(var i=1; i<=6; i++)
     {
         m[i]=document.getElementById("mk"+i).value;
+        document.getElementById("mr"+i).innerHTML=m[i];
         t[i]=document.getElementById("tot"+i).value;
+        document.getElementById("tt"+i).innerHTML=t[i];
         per[i]=(m[i]/t[i])*100;
     }
     //console.log(m);
@@ -50,20 +57,28 @@ function getDetails()
         else if((parseInt(per[i])>=90) && (parseInt(per[i])<=94))
             grade[i]="A+";
         else if((parseInt(per[i])>=95) && (parseInt(per[i])<=100))
-            grade[i]="S";        
+            grade[i]="S";   
+            
+        document.getElementById("gd"+i).innerHTML=grade[i];
     }
-
+    var status ="PASSED";
     document.getElementById("studname").innerHTML=sname;
     document.getElementById("semester").innerHTML=sem;
-    document.getElementById("examc").innerHTML=ecode;
-
-    for(var i=1;i<=6;i++)
+    document.getElementById("examc").innerHTML=ecode;   
+    for(var i=0;i<=6;i++)
     {
-        document.getElementById("sb"+i).innerHTML=subject[i].toString(); 
-        document.getElementById("mr"+i).innerHTML=m[i].toString();   
-        document.getElementById("tt"+i).innerHTML=t[i].toString();
-        document.getElementById("gd"+i).innerHTML=grade[i].toString();
+        if(grade[i]=="F")
+        {   
+            status="FAILED";
+            break;
+        }
+        
+        
     }
+    document.getElementById("stat").innerHTML=status;
+    if(status=="FAILED")
+    document.getElementById("stat").style.color="red";
+    else
+    document.getElementById("stat").style.color="green";
 
-    
 }
