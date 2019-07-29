@@ -1,8 +1,6 @@
 function getDetails()
 { 
-    var res = document.getElementById("result");
-    if(res.style.display=="none")
-        res.style.display="block";  
+    
         
     var sname=document.getElementById("stname").value;
     var sem= document.getElementById("semname").value;
@@ -12,9 +10,12 @@ function getDetails()
     {  
         alert("Please enter required fields");
         document.getElementById("alert1").style.display="auto";
-        return;
+        return false;
     }
     
+    var res = document.getElementById("result");
+    if(res.style.display=="none")
+        res.style.display="block";  
 
 
     var subject = Array();
